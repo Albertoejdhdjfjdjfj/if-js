@@ -4,11 +4,11 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "prettier": "prettier --write if-js/**/*.js",
-    "lint": "eslint --debug if-js/",
-    "lint:write": "eslint --debug if-js/ --fix"
+    "prettier": "prettier --write src/**/*.js",
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix"
   },
-  
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Albertoejdhdjfjdjfj/if-js.git"
