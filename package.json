@@ -1,0 +1,40 @@
+{
+  "name": "lesson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "prettier": "prettier --write src/**/*.js",
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Albertoejdhdjfjdjfj/if-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Albertoejdhdjfjdjfj/if-js/issues"
+  },
+  "homepage": "https://github.com/Albertoejdhdjfjdjfj/if-js#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "husky": "^7.0.4"
+  }
+}
