@@ -9,4 +9,4 @@ test++;
 test += '1'; //происходит контетенация переменных как строки
 console.log(test);
 test--; // просто отнимется 1 как от числа
-console.log(test);
+  console.log(test)

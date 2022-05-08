@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write src/**/*.js",
-    "lint":"eslint src/**/*js",
-    "lint:write":"eslint --debug src/ --fix"
+    "lint": "eslint src/**/*js",
+    "lint:write": "eslint --debug src/ --fix",
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Albertoejdhdjfjdjfj/if-js#readme",
   "devDependencies": {
     "eslint": "^8.15.0",
+    "husky": "^7.0.4",
     "prettier": "2.6.2"
   }
 }
