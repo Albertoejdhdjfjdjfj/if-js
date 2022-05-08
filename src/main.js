@@ -2,13 +2,13 @@ let user = 'John Doe';
 console.log(user);
 const student = 'Albert Bairamukov';
 console.log(student);
-user += student; // происходит контентенация строк переменных
+user += student; // variable string contentation occurs
 console.log(user);
 let test = 1;
 test++;
-test += '1'; //происходит контетенация переменных как строки
+test += '1'; //variables are concatenated as a string
 console.log(test);
-test--; // просто отнимется 1 как от числа
+test--; //just subtract 1 as a number
 console.log(test);
 test = true;
 console.log(test);
