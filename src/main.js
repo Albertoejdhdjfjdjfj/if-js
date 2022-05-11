@@ -1,35 +1,48 @@
-let user = 'John Doe';
-console.log(user);
-
-const student = 'Albert Bairamukov';
-console.log(student);
-
-user += student; // variable string contentation occurs
-console.log(user);
-
-let test = 1;
-test++;
-test += '1'; //variables are concatenated as a string
-console.log(test);
-
-test--; //just subtract 1 as a number
-console.log(test);
-
-test = true;
-console.log(test);
-
-let arr = [2, 3, 5, 8];
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-console.log(sum);
-
-arr = [2, 5, 8, 15, 0, 6, 20, 3];
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > 5 && arr[i] < 10) console.log(arr[i]);
+function Polidrom(string) {
+  string = string.split('');
+  string.reverse();
+  string = string.join('');
+  return string;
 }
 
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] % 2 == 0) console.log(arr[i]);
+const word = 'house';
+console.log(Polidrom(word));
+
+function Polidromcheck(string1, string2) {
+  string1 = Polidrom(string1);
+  if (string1 == string2) return true;
+  else return false;
 }
+
+console.log(Polidromcheck('house', 'esuoh'));
+//------------------------------------------
+function min(a, b) {
+  return a > b ? b : a;
+}
+
+console.log(min(4, 5));
+
+function max(a, b) {
+  return a < b ? b : a;
+}
+
+console.log(max(4, 5));
+
+//----------------------------------------------
+
+const arr = [];
+for (let i = 0; i < 10; i++) {
+  arr[i] = 10 * Math.random();
+  arr[i] = Math.round(arr[i]);
+}
+
+console.log(arr);
+
+function ToZero(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) arr[i] = 'zero';
+  }
+  return arr;
+}
+
+console.log(ToZero(arr));
