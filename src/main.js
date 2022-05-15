@@ -30,8 +30,8 @@ console.log(max(4, 5));
 
 //----------------------------------------------
 
-const arr = [];
-for (let i = 0; i < 10; i++) {
+const arr = []
+                   for (let i = 0; i < 10; i++) {
   arr[i] = 10 * Math.random();
   arr[i] = Math.round(arr[i]);
 }
