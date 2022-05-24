@@ -32,7 +32,7 @@ console.log(max(4, 5));
 
 const arr = [];
 for (let i = 0; i < 10; i++) {
-  arr[i] = 100 * Math.random();
+  arr[i] = 100 * Math.random() + 1;
   arr[i] = Math.round(arr[i]);
 }
 
@@ -40,7 +40,11 @@ console.log(arr);
 
 function toZero(arr) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 10 == 0) arr[i] = arr[i] / 10 + 'zero';
+    if (arr[i] % 10 == 0)
+      arr[i] =
+        (arr[i] % 100 == 0 ? arr[i] / 100 : arr[i] / 10) +
+        'zero' +
+        (arr[i] / 100 == 1 ? 'zero' : '');
   }
   return arr;
 }
