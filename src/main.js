@@ -1,7 +1,5 @@
 function polidrom(string) {
-  string = string.split('');
-  string.reverse();
-  string = string.join('');
+  string = string.split('').reverse().join('');
   return string;
 }
 
