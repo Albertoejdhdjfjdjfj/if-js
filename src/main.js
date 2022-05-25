@@ -8,8 +8,7 @@ console.log(polidrom(word));
 
 function polidromCheck(string1, string2) {
   string1 = polidrom(string1);
-  if (string1 === string2) return true;
-  else return false;
+  return string1 === string2 ? true : false;
 }
 
 console.log(polidromCheck(word, polidrom(word)));
