@@ -1,17 +1,10 @@
-function polidrom(string) {
-  string = string.split('').reverse().join('');
-  return string;
+const word = 'казак';
+
+function polidromCheck(string) {
+  return string === string.split('').reverse().join('') ? true : false;
 }
 
-const word = 'house';
-console.log(polidrom(word));
-
-function polidromCheck(string1, string2) {
-  string1 = polidrom(string1);
-  return string1 === string2 ? true : false;
-}
-
-console.log(polidromCheck(word, polidrom(word)));
+console.log(polidromCheck(word));
 //------------------------------------------
 function min(a, b) {
   return a > b ? b : a;
