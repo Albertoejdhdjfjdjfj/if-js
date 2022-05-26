@@ -1,7 +1,7 @@
 const word = 'казак';
 
 function polidromCheck(string) {
-  return string === string.split('').reverse().join('') ? true : false;
+  return string === string.split('').reverse().join('');
 }
 
 console.log(polidromCheck(word));
