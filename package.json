@@ -7,22 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write src/**/*.js",
     "lint": "eslint src/**/*js",
-    "lint:write": "eslint --debug src/ --fix",
+    "lint:write":"eslint --debug src/ --fix",
     "app":" prettier --write src/**/*.js && eslint src/**/*js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Albertoejdhdjfjdjfj/if-js.git"
+    "type":"git",
+    "url":"git+https://github.com/Albertoejdhdjfjdjfj/if-js.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author":"",
+  "license":"ISC",
   "bugs": {
-    "url": "https://github.com/Albertoejdhdjfjdjfj/if-js/issues"
+    "url":"https://github.com/Albertoejdhdjfjdjfj/if-js/issues"
   },
-  "homepage": "https://github.com/Albertoejdhdjfjdjfj/if-js#readme",
-  "devDependencies": {
-    "eslint": "^8.15.0",
-    "husky": "^7.0.4",
-    "prettier": "2.6.2"
+  "homepage":"https://github.com/Albertoejdhdjfjdjfj/if-js#readme",
+  "devDependencies":{
+    "eslint":"^8.15.0",
+    "husky":"^7.0.4",
+    "prettier":"2.6.2"
   }
 }
