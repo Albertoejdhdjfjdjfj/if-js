@@ -1,4 +1,3 @@
-// const { sum } = require('./main');
 
    function sum(a) {
      let Sum = a;

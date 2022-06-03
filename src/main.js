@@ -33,4 +33,3 @@ p2.addEventListener('click', colorchange2);
 const p3 = document.getElementById('text3');
 p3.addEventListener('click', colorchange3);
 
-// module.exports = { sum,colors,colorchange };
