@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "verbose": true
+  },
   "scripts": {
     "test": "jest",
     "prettier": "prettier --write src/**/*.js",
@@ -24,6 +27,7 @@
     "eslint": "^8.15.0",
     "husky": "^7.0.4",
     "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "prettier": "2.6.2"
   }
 }

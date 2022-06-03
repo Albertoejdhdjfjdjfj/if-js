@@ -1,3 +1,12 @@
+
+const colorchange = () => {
+  let i = 0;
+  return function (event) {
+    event.target.style.color = colors[i];
+    i + 1 == colors.lenght ? (i = 0) : i++;
+  };
+};
+
 function sum(a) {
   let Sum = a;
   function f(b) {
@@ -9,19 +18,10 @@ function sum(a) {
   };
   return f;
 }
-
 console.log(sum(5)(2));
 
 //====================================
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const colorchange = () => {
-  let i = 0;
-  return function (event) {
-    event.target.style.color = colors[i];
-    i + 1 == colors.lenght ? (i = 0) : i++;
-  };
-};
-
 const colorchange1 = colorchange();
 const colorchange2 = colorchange();
 const colorchange3 = colorchange();
@@ -33,4 +33,4 @@ p2.addEventListener('click', colorchange2);
 const p3 = document.getElementById('text3');
 p3.addEventListener('click', colorchange3);
 
-// export{sum};
+// module.exports = { sum,colors,colorchange };
