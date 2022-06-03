@@ -1,4 +1,4 @@
-// const { sum } = require('../src/main');
+// import{ sum}from'../src/main';
 // describe('Check function Sum', () => {
 //   test('Check with value 2', () => {
 //     expect(sum(2)).toBe(true);
