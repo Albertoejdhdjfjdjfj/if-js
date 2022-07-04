@@ -1,22 +1,24 @@
 const changecolor = () => {
-  var i = 0;
+  let i = 0;
   return function (event) {
     event.target.style.color = colors[i];
-    if(i>colors.length-2) return i=0;
-    else return i++;
+    if (i > colors.length - 2) return (i = 0);
+    return i++;
   };
 };
+
 function sum(a) {
   let sum = a;
-  function f(b) {
+  function add(b) {
     sum += b;
     return sum;
   }
-  f.toString = function () {
+  add.toString = () => {
     return sum;
   };
-  return f;
+  return add;
 }
+
 console.log(sum(5)(2));
 //====================================
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
@@ -30,3 +32,4 @@ p1.addEventListener('click', changecolor1);
 p2.addEventListener('click', changecolor2);
 p3.addEventListener('click', changecolor3);
 
+module.exports = { sum, changecolor };

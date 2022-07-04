@@ -1,34 +1,15 @@
 /**
  * @jest-environment jsdom
  */
+
+ const{sum,changecolor}=require('./src/main')
+
  document.body.innerHTML = `  
  <p id="text1">Text 1</p>
  <p id="text2">Text 2</p>
  <p id="text3">Text 3</p>`;
-   function sum(a) {
-     let sum = a;
-     function f(b) {
-       sum += b;
-       return sum;
-     }
-     f.toString = function () {
-       return sum;
-     };
-     return f;
-   }
-
-   const changecolor = () => {
-    var i = 0;
-    return function (event) {
-      const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-      event.target.style.color = colors[i];
-      if(i>colors.length-2) return i=0;
-      else return i++;
-    };
-  };
-
-
-describe('Check function Sum', () => {
+ 
+ describe('Check function Sum', () => {
   test('Check with value 2&&-2', () => {
     expect(sum(2)(-2)).toBe(0);
   });
@@ -41,17 +22,18 @@ describe('Check function Sum', () => {
 });
 
 describe("check out change text color", () => {
-const changecolor1 = changecolor();
-const changecolor2 = changecolor();
-const changecolor3 = changecolor();
-const p1 = document.getElementById('text1');
-const p2 = document.getElementById('text2');
-const p3 = document.getElementById('text3');
-p1.addEventListener('click', changecolor1);
-p2.addEventListener('click', changecolor2);
-p3.addEventListener('click', changecolor3);
+  const changecolor1 = changecolor();
+  const changecolor2 = changecolor();
+  const changecolor3 = changecolor();
+  const p1 = document.getElementById('text1');
+  const p2 = document.getElementById('text2');
+  const p3 = document.getElementById('text3');
+  p1.addEventListener('click', changecolor1);
+  p2.addEventListener('click', changecolor2);
+  p3.addEventListener('click', changecolor3);
   let pBlock = [p1, p2, p3];
   const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+  
   test("expect 1st click color is magenta", async () => {
     for (let i = 0; i < pBlock.length; i++) {
       pBlock[i].click();
