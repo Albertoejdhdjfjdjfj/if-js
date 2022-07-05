@@ -1,42 +1,35 @@
-const word = 'казак';
+const changecolor = () => {
+  let i = 0;
+  return function (event) {
+    event.target.style.color = colors[i];
+    if (i > colors.length - 2) return (i = 0);
+    return i++;
+  };
+};
 
-function polidromCheck(string) {
-  return string === string.split('').reverse().join('');
-}
-
-console.log(polidromCheck(word));
-//------------------------------------------
-function min(a, b) {
-  return a > b ? b : a;
-}
-
-console.log(min(4, 5));
-
-function max(a, b) {
-  return a < b ? b : a;
-}
-
-console.log(max(4, 5));
-
-//----------------------------------------------
-
-const arr = [];
-for (let i = 0; i < 10; i++) {
-  arr[i] = 100 * Math.random() + 1;
-  arr[i] = Math.round(arr[i]);
-}
-
-console.log(arr);
-
-function toZero(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 10 == 0)
-      arr[i] =
-        (arr[i] % 100 == 0 ? arr[i] / 100 : arr[i] / 10) +
-        'zero' +
-        (arr[i] / 100 == 1 ? 'zero' : '');
+function sum(a) {
+  let sum = a;
+  function add(b) {
+    sum += b;
+    return sum;
   }
-  return arr;
+  add.toString = () => {
+    return sum;
+  };
+  return add;
 }
 
-console.log(toZero(arr));
+console.log(sum(5)(2));
+//====================================
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+const changecolor1 = changecolor();
+const changecolor2 = changecolor();
+const changecolor3 = changecolor();
+const p1 = document.getElementById('text1');
+const p2 = document.getElementById('text2');
+const p3 = document.getElementById('text3');
+p1.addEventListener('click', changecolor1);
+p2.addEventListener('click', changecolor2);
+p3.addEventListener('click', changecolor3);
+
+module.exports = { sum, changecolor };
