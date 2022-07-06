@@ -1,35 +1,64 @@
-const changecolor = () => {
-  let i = 0;
-  return function (event) {
-    event.target.style.color = colors[i];
-    if (i > colors.length - 2) return (i = 0);
-    return i++;
-  };
-};
+const data = [
+  {
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
+  },
+  {
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
+  },
+  {
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
+  },
+];
 
-function sum(a) {
-  let sum = a;
-  function add(b) {
-    sum += b;
-    return sum;
-  }
-  add.toString = () => {
-    return sum;
-  };
-  return add;
+const date = '2020-11-26';
+console.log(dateformat(date));
+console.log(findmatches('Berlin', data));
+
+function dateformat(date) {
+  const yearindex = date.indexOf('-');
+  const dayindex = date.lastIndexOf('-');
+  return (date =
+    date.slice(dayindex + 1) +
+    '.' +
+    date.slice(yearindex + 1, dayindex) +
+    '.' +
+    date.slice(0, yearindex));
 }
 
-console.log(sum(5)(2));
-//====================================
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const changecolor1 = changecolor();
-const changecolor2 = changecolor();
-const changecolor3 = changecolor();
-const p1 = document.getElementById('text1');
-const p2 = document.getElementById('text2');
-const p3 = document.getElementById('text3');
-p1.addEventListener('click', changecolor1);
-p2.addEventListener('click', changecolor2);
-p3.addEventListener('click', changecolor3);
-
-module.exports = { sum, changecolor };
+function findmatches(string, data) {
+  return data.filter(
+    (item) =>
+      string.includes(item.name) || string.includes(item.country) || string.includes(item.city),
+  );
+}
