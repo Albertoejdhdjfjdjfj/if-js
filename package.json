@@ -11,7 +11,8 @@
     "prettier": "prettier --write src/**/*.js",
     "lint": "eslint src/**/*js",
     "lint:write": "eslint --debug src/ --fix",
-    "app": " prettier --write src/**/*.js && eslint src/**/*js"
+    "app": " prettier --write src/**/*.js && eslint src/**/*js",
+    "lint:check":"npm run prettier && npm run lint"
   },
   "repository": {
     "type": "git",
