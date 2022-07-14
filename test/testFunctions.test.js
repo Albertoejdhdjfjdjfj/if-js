@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
- const{sum,changecolor}=require('./src/lesson-4/main')
+ const{sum,changecolor}=require('../src/lesson-4/main')
 
  document.body.innerHTML = `  
  <p id="text1">Text 1</p>
