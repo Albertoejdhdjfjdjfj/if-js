@@ -1,4 +1,3 @@
-console.log(polindrome('шалаш'));
 const hotels = [
   {
     name: 'Hotel Leopold',
@@ -157,27 +156,30 @@ const hotels = [
   },
 ];
 
+console.log(polindrome('шалаш'));
 console.log(findmatches('Germany', hotels));
 console.log(sortcoutryandcity(hotels));
+
 function findmatches(string, data) {
   return data.filter(
     (item) =>
       string.includes(item.name) || string.includes(item.country) || string.includes(item.city),
   );
 }
+
 function polindrome(string) {
   return string === string.split('').reverse().join('');
 }
 function sortcoutryandcity(data) {
-  let countrys = [];
-  let citys = [];
-  let res = [];
+  const countrys = [];
+  const citys = [];
+  const res = [];
   data.forEach((element) => {
     if (!res.includes(element.country)) countrys.push(element.country);
   });
 
-  for (i in countrys) {
-    let el = [];
+  for (const i in countrys) {
+    const el = [];
     data.forEach((element) => {
       if (countrys[i] == element.country) {
         el.push(element.city);
@@ -186,10 +188,9 @@ function sortcoutryandcity(data) {
     citys.push(el);
   }
 
-  for (j = 0; j < countrys.length; j++) {
+  for (let j = 0; j < countrys.length; j++) {
     res.push({ [countrys[j]]: citys[j] });
   }
-
   return res;
 }
 
@@ -207,20 +208,20 @@ function getCalendarMonth(amountinmonth, amountinweek, amountofweek) {
   )
     console.log('Неверно введены данные');
   else {
-    let calendaraar = [];
-    amountinlastmonth = (amountinmonth == 30 ? 31 : 30) - amountofweek + 2;
+    const calendaraar = [];
+    const amountinlastmonth = (amountinmonth == 30 ? 31 : 30) - amountofweek + 2;
     if (amountinlastmonth != 0) {
       var lastmonthcalendararr = [];
-      for (j = amountinlastmonth; j < (amountinmonth == 30 ? 31 : 30) + 1; j++) {
+      for (let j = amountinlastmonth; j < (amountinmonth == 30 ? 31 : 30) + 1; j++) {
         lastmonthcalendararr.push(j);
       }
     }
-    for (i = 1; i < amountinweek - amountofweek + 2; i++) {
+    for (let i = 1; i < amountinweek - amountofweek + 2; i++) {
       lastmonthcalendararr.push(i);
     }
     calendaraar.push(lastmonthcalendararr);
     let thismonthcalendararr = [];
-    for (i = amountinweek - amountofweek + 2; i <= amountinmonth + amountinweek; i++) {
+    for (let i = amountinweek - amountofweek + 2; i <= amountinmonth + amountinweek; i++) {
       if (thismonthcalendararr.length == amountinweek) {
         calendaraar.push(thismonthcalendararr);
         thismonthcalendararr = [];

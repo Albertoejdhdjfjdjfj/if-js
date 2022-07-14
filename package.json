@@ -12,7 +12,7 @@
     "lint": "eslint src/**/*js",
     "lint:write": "eslint --debug src/ --fix",
     "app": " prettier --write src/**/*.js && eslint src/**/*js",
-    "lint:check":"npm run prettier && npm run lint"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
