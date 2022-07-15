@@ -1,166 +1,167 @@
 const hotels = [
   {
-    name: 'Hotel Leopold',
-    city: 'Saint Petersburg',
-    country: 'Russia',
+    name: "Hotel Leopold",
+    city: "Saint Petersburg",
+    country: "Russia",
   },
   {
-    name: 'Apartment Sunshine',
-    city: 'Santa Cruz de Tenerife',
-    country: 'Spain',
+    name: "Apartment Sunshine",
+    city: "Santa Cruz de Tenerife",
+    country: "Spain",
   },
   {
-    name: 'Villa Kunerad',
-    city: 'Vysokie Tatry',
-    country: 'Slowakia',
+    name: "Villa Kunerad",
+    city: "Vysokie Tatry",
+    country: "Slowakia",
   },
   {
-    name: 'Hostel Friendship',
-    city: 'Berlin',
-    country: 'Germany',
+    name: "Hostel Friendship",
+    city: "Berlin",
+    country: "Germany",
   },
   {
-    name: 'Radisson Blu Hotel',
-    city: 'Kyiv',
-    country: 'Ukraine',
+    name: "Radisson Blu Hotel",
+    city: "Kyiv",
+    country: "Ukraine",
   },
   {
-    name: 'Paradise Hotel',
-    city: 'Guadalupe',
-    country: 'Mexico',
+    name: "Paradise Hotel",
+    city: "Guadalupe",
+    country: "Mexico",
   },
   {
-    name: 'Hotel Grindewald',
-    city: 'Interlaken',
-    country: 'Switzerland',
+    name: "Hotel Grindewald",
+    city: "Interlaken",
+    country: "Switzerland",
   },
   {
-    name: 'The Andaman Resort',
-    city: 'Port Dickson',
-    country: 'Malaysia',
+    name: "The Andaman Resort",
+    city: "Port Dickson",
+    country: "Malaysia",
   },
   {
-    name: 'Virgin Hotel',
-    city: 'Chicago',
-    country: 'USA',
+    name: "Virgin Hotel",
+    city: "Chicago",
+    country: "USA",
   },
   {
-    name: 'Grand Beach Resort',
-    city: 'Dubai',
-    country: 'United Arab Emirates',
+    name: "Grand Beach Resort",
+    city: "Dubai",
+    country: "United Arab Emirates",
   },
   {
-    name: 'Shilla Stay',
-    city: 'Seoul',
-    country: 'South Korea',
+    name: "Shilla Stay",
+    city: "Seoul",
+    country: "South Korea",
   },
   {
-    name: 'San Firenze Suites',
-    city: 'Florence',
-    country: 'Italy',
+    name: "San Firenze Suites",
+    city: "Florence",
+    country: "Italy",
   },
   {
-    name: 'The Andaman Resort',
-    city: 'Port Dickson',
-    country: 'Malaysia',
+    name: "The Andaman Resort",
+    city: "Port Dickson",
+    country: "Malaysia",
   },
   {
-    name: 'Black Penny Villas',
-    city: 'BTDC, Nuca Dua',
-    country: 'Indonesia',
+    name: "Black Penny Villas",
+    city: "BTDC, Nuca Dua",
+    country: "Indonesia",
   },
   {
-    name: 'Koko Hotel',
-    city: 'Tokyo',
-    country: 'Japan',
+    name: "Koko Hotel",
+    city: "Tokyo",
+    country: "Japan",
   },
   {
-    name: 'Ramada Plaza',
-    city: 'Istanbul',
-    country: 'Turkey',
+    name: "Ramada Plaza",
+    city: "Istanbul",
+    country: "Turkey",
   },
   {
-    name: 'Waikiki Resort Hotel',
-    city: 'Hawaii',
-    country: 'USA',
+    name: "Waikiki Resort Hotel",
+    city: "Hawaii",
+    country: "USA",
   },
   {
-    name: 'Puro Hotel',
-    city: 'Krakow',
-    country: 'Poland',
+    name: "Puro Hotel",
+    city: "Krakow",
+    country: "Poland",
   },
   {
-    name: 'Asma Suites',
-    city: 'Santorini',
-    country: 'Greece',
+    name: "Asma Suites",
+    city: "Santorini",
+    country: "Greece",
   },
   {
-    name: 'Cityden Apartments',
-    city: 'Amsterdam',
-    country: 'Netherlands',
+    name: "Cityden Apartments",
+    city: "Amsterdam",
+    country: "Netherlands",
   },
   {
-    name: 'Mandarin Oriental',
-    city: 'Miami',
-    country: 'USA',
+    name: "Mandarin Oriental",
+    city: "Miami",
+    country: "USA",
   },
   {
-    name: 'Concept Terrace Hotel',
-    city: 'Rome',
-    country: 'Italy',
+    name: "Concept Terrace Hotel",
+    city: "Rome",
+    country: "Italy",
   },
   {
-    name: 'Ponta Mar Hotel',
-    city: 'Fortaleza',
-    country: 'Brazil',
+    name: "Ponta Mar Hotel",
+    city: "Fortaleza",
+    country: "Brazil",
   },
   {
-    name: 'Four Seasons Hotel',
-    city: 'Sydney',
-    country: 'Australia',
+    name: "Four Seasons Hotel",
+    city: "Sydney",
+    country: "Australia",
   },
   {
-    name: 'Le Meridien',
-    city: 'Nice',
-    country: 'France',
+    name: "Le Meridien",
+    city: "Nice",
+    country: "France",
   },
   {
-    name: 'Apart Neptun',
-    city: 'Gdansk',
-    country: 'Poland',
+    name: "Apart Neptun",
+    city: "Gdansk",
+    country: "Poland",
   },
   {
-    name: 'Lux Isla',
-    city: 'Ibiza',
-    country: 'Spain',
+    name: "Lux Isla",
+    city: "Ibiza",
+    country: "Spain",
   },
   {
-    name: 'Nox Hostel',
-    city: 'London',
-    country: 'UK',
+    name: "Nox Hostel",
+    city: "London",
+    country: "UK",
   },
   {
-    name: 'Leonardo Vienna',
-    city: 'Vienna',
-    country: 'Austria',
+    name: "Leonardo Vienna",
+    city: "Vienna",
+    country: "Austria",
   },
   {
-    name: 'Adagio Aparthotel',
-    city: 'Edinburgh',
-    country: 'UK',
+    name: "Adagio Aparthotel",
+    city: "Edinburgh",
+    country: "UK",
   },
   {
-    name: 'Steigenberger Hotel',
-    city: 'Hamburg',
-    country: 'Germany',
+    name: "Steigenberger Hotel",
+    city: "Hamburg",
+    country: "Germany",
   },
 ];
 
-console.log(polindrome('шалаш'));
-console.log(findmatches('Germany', hotels));
-console.log(sortcoutryandcity(hotels));
+console.log(polindrome("шалаш"));
+console.log(findMatches("Germany", hotels));
+console.log(sortCoutryAndCity(hotels));
+console.log(getCalendarMonth(31, 7, 4));
 
-function findmatches(string, data) {
+function findMatches(string, data) {
   return data.filter(
     (item) =>
       string.includes(item.name) || string.includes(item.country) || string.includes(item.city),
@@ -168,9 +169,10 @@ function findmatches(string, data) {
 }
 
 function polindrome(string) {
-  return string === string.split('').reverse().join('');
+  return string === string.split("").reverse().join("");
 }
-function sortcoutryandcity(data) {
+
+function sortCoutryAndCity(data) {
   const countrys = [];
   const citys = [];
   const res = [];
@@ -194,8 +196,6 @@ function sortcoutryandcity(data) {
   return res;
 }
 
-console.log(getCalendarMonth(31, 7, 4));
-
 function getCalendarMonth(amountinmonth, amountinweek, amountofweek) {
   if (
     amountinmonth < 30 ||
@@ -205,22 +205,25 @@ function getCalendarMonth(amountinmonth, amountinweek, amountofweek) {
     amountofweek > 7 ||
     amountofweek < 1 ||
     amountofweek > amountinweek
-  )
-    console.log('Неверно введены данные');
-  else {
+  ) {
+    console.log("Неверно введены данные");
+  } else {
     const calendaraar = [];
     const amountinlastmonth = (amountinmonth == 30 ? 31 : 30) - amountofweek + 2;
+    const lastmonthcalendararr = [];
     if (amountinlastmonth != 0) {
-      var lastmonthcalendararr = [];
       for (let j = amountinlastmonth; j < (amountinmonth == 30 ? 31 : 30) + 1; j++) {
         lastmonthcalendararr.push(j);
       }
     }
+
     for (let i = 1; i < amountinweek - amountofweek + 2; i++) {
       lastmonthcalendararr.push(i);
     }
+
     calendaraar.push(lastmonthcalendararr);
     let thismonthcalendararr = [];
+
     for (let i = amountinweek - amountofweek + 2; i <= amountinmonth + amountinweek; i++) {
       if (thismonthcalendararr.length == amountinweek) {
         calendaraar.push(thismonthcalendararr);
@@ -229,6 +232,7 @@ function getCalendarMonth(amountinmonth, amountinweek, amountofweek) {
       if (i <= amountinmonth) thismonthcalendararr.push(i);
       else thismonthcalendararr.push(i - amountinmonth);
     }
+
     return calendaraar;
   }
 }
