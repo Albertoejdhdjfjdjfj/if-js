@@ -208,7 +208,7 @@ function getCalendarMonth(amountinmonth, amountinweek, amountofweek) {
   ) {
     console.log("Неверно введены данные");
   } else {
-    const calendaraar = [];
+    const calendararr = [];
     const amountinlastmonth = (amountinmonth == 30 ? 31 : 30) - amountofweek + 2;
     const lastmonthcalendararr = [];
     if (amountinlastmonth != 0) {
@@ -221,18 +221,18 @@ function getCalendarMonth(amountinmonth, amountinweek, amountofweek) {
       lastmonthcalendararr.push(i);
     }
 
-    calendaraar.push(lastmonthcalendararr);
+    calendararr.push(lastmonthcalendararr);
     let thismonthcalendararr = [];
 
     for (let i = amountinweek - amountofweek + 2; i <= amountinmonth + amountinweek; i++) {
       if (thismonthcalendararr.length == amountinweek) {
-        calendaraar.push(thismonthcalendararr);
+        calendararr.push(thismonthcalendararr);
         thismonthcalendararr = [];
       }
       if (i <= amountinmonth) thismonthcalendararr.push(i);
       else thismonthcalendararr.push(i - amountinmonth);
     }
 
-    return calendaraar;
+    return calendararr;
   }
 }
