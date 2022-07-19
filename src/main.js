@@ -236,5 +236,4 @@ function getCalendarMonth(amountInMonth, amountInWeek, amountOfWeek) {
     }
 
     return calendarArr;
-  
 }
