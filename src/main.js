@@ -197,17 +197,19 @@ function sortCoutryAndCity(data) {
 }
 
 function getCalendarMonth(amountInMonth, amountInWeek, amountOfWeek) {
-  if (
-    amountInMonth < 30 ||
-    amountInMonth > 31 ||
-    amountInWeek > 7 ||
-    amountInWeek < 7 ||
-    amountOfWeek > 7 ||
-    amountOfWeek < 1 ||
-    amountOfWeek > amountInWeek
-  ) {
+  const isValidData=amountInMonth < 30 ||
+  amountInMonth > 31 ||
+  amountInWeek > 7 ||
+  amountInWeek < 7 ||
+  amountOfWeek > 7 ||
+  amountOfWeek < 1 ||
+  amountOfWeek > amountInWeek;
+  
+  if (!isValidData) {
     console.log("Неверно введены данные");
-  } else {
+    return
+  } 
+
     const calendarArr = [];
     const amountInLastMonth = (amountInMonth == 30 ? 31 : 30) - amountOfWeek + 2;
     const lastMonthCalendarArr = [];
@@ -234,5 +236,5 @@ function getCalendarMonth(amountInMonth, amountInWeek, amountOfWeek) {
     }
 
     return calendarArr;
-  }
+  
 }
