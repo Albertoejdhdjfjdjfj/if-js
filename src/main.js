@@ -232,7 +232,7 @@ function getCalendarMonth(amountInMonth, amountInWeek, amountOfWeek) {
         thisMonthCalendarArr = [];
       }
       if (i <= amountInMonth) {thisMonthCalendarArr.push(i)}
-      else {thisMonthCalendarArr.push(i - amountInMonth)};
+      else {thisMonthCalendarArr.push(i - amountInMonth)}
     }
 
     return calendarArr;
