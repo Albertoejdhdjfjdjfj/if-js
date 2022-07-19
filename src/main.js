@@ -205,7 +205,7 @@ function getCalendarMonth(amountInMonth, amountInWeek, amountOfWeek) {
   amountOfWeek < 1 ||
   amountOfWeek > amountInWeek;
   
-  if (!isValidData) {
+  if (isValidData) {
     console.log("Неверно введены данные");
     return
   } 
@@ -231,8 +231,8 @@ function getCalendarMonth(amountInMonth, amountInWeek, amountOfWeek) {
         calendarArr.push(thisMonthCalendarArr);
         thisMonthCalendarArr = [];
       }
-      if (i <= amountInMonth) thisMonthCalendarArr.push(i);
-      else thisMonthCalendarArr.push(i - amountInMonth);
+      if (i <= amountInMonth) {thisMonthCalendarArr.push(i)}
+      else {thisMonthCalendarArr.push(i - amountInMonth)};
     }
 
     return calendarArr;
