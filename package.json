@@ -11,7 +11,8 @@
     "prettier": "prettier --write src/**/*.js",
     "lint": "eslint src/**/*js",
     "lint:write": "eslint --debug src/ --fix",
-    "app": " prettier --write src/**/*.js && eslint src/**/*js"
+    "lint:fix": " prettier --write src/**/*.js && eslint src/**/*js",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,7 @@
   "homepage": "https://github.com/Albertoejdhdjfjdjfj/if-js#readme",
   "devDependencies": {
     "eslint": "^8.15.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
     "prettier": "2.6.2"
