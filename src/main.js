@@ -42,7 +42,7 @@ function deepEqual(obj1, obj2) {
       // Проверка на одинаковое количество свойств
       return false;
     }
-    for (let propName in obj1) {
+    for (const propName in obj1) {
       if (!obj2.hasOwnProperty(propName)) {
         // Есть ли свойства в обоих объектах
         return false;
