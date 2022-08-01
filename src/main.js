@@ -9,13 +9,19 @@ class User {
 }
 
 class Student extends User {
-  constructor(firstName, lastName, admissionYear, courseName) {
+  constructor(firstName, lastName, admissionYear) {
     super(firstName, lastName);
     this.admissionYear = admissionYear;
-    this.courseName = courseName;
+    this.currentYear = new Date();
   }
   course() {
-    return super.fullName() + "-" + this.admissionYear + "," + this.courseName;
+    return (
+      super.fullName() +
+      "-" +
+      this.admissionYear +
+      "," +
+      (this.currentYear.getFullYear() - this.admissionYear)
+    );
   }
 }
 
@@ -24,10 +30,10 @@ class Students {
     this.studentsData = studentsData;
   }
   getInfo() {
-    const sortdata = this.studentsData;
+    const sortData = this.studentsData;
     const res = [];
-    sortdata.sort((a, b) => (a.admissionYear > b.admissionYear ? -1 : 1));
-    sortdata.forEach((element) => {
+    sortData.sort((a, b) => (a.admissionYear > b.admissionYear ? -1 : 1));
+    sortData.forEach((element) => {
       res.push(
         element.firstName +
           " " +
@@ -44,7 +50,7 @@ class Students {
 }
 
 const user = new User("Григорий", "Лепс");
-const student = new Student("Григорий", "Лепс", 1982, 4);
+const student = new Student("Григорий", "Лепс", 2020);
 console.log(user.fullName());
 console.log(student.course());
 
