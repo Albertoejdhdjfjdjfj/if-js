@@ -1,60 +1,85 @@
-const obj1 = {
-  a: "a",
-  b: {
-    a: "a",
-    b: "b",
-    c: {
-      a: 1,
-    },
-  },
-};
-
-const obj2 = {
-  b: {
-    c: {
-      a: 1,
-    },
-    b: "b",
-    a: "a",
-  },
-  a: "a",
-};
-
-const obj3 = {
-  a: {
-    c: {
-      a: "a",
-    },
-    b: "b",
-    a: "a",
-  },
-  b: "b",
-};
-
-console.log(deepEqual(obj1, obj2));
-console.log(deepEqual(obj2, obj3));
-
-function deepEqual(obj1, obj2) {
-  if (obj1 === obj2) {
-    return true;
-  } else {
-    if (Object.keys(obj1).length != Object.keys(obj2).length) {
-      // Проверка на одинаковое количество свойств
-      return false;
-    }
-    for (const propName in obj1) {
-      if (!obj2.hasOwnProperty(propName)) {
-        // Есть ли свойства в обоих объектах
-        return false;
-      }
-      if (obj1[propName].valueOf() !== obj2[propName].valueOf()) {
-        // Одинаковы ли значения свойст
-        if (!deepEqual(obj1[propName], obj2[propName])) {
-          // проверка объекта в объекте
-          return false;
-        }
-      }
-    }
+class User {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
-  return true;
+  fullName() {
+    return this.firstName + " " + this.lastName;
+  }
 }
+
+class Student extends User {
+  constructor(firstName, lastName, admissionYear) {
+    super(firstName, lastName);
+    this.admissionYear = admissionYear;
+    this.currentYear = new Date();
+  }
+  course() {
+    return (
+      super.fullName() +
+      "-" +
+      this.admissionYear +
+      "," +
+      (this.currentYear.getFullYear() - this.admissionYear)
+    );
+  }
+}
+
+class Students {
+  constructor(studentsData) {
+    this.studentsData = studentsData;
+  }
+  getInfo() {
+    const sortData = this.studentsData;
+    const res = [];
+    sortData.sort((a, b) => (a.admissionYear > b.admissionYear ? -1 : 1));
+    sortData.forEach((element) => {
+      res.push(
+        element.firstName +
+          " " +
+          element.lastName +
+          "-" +
+          element.courseName +
+          "," +
+          (2019 - element.admissionYear + 1) +
+          " курс",
+      );
+    });
+    return res;
+  }
+}
+
+const user = new User("Григорий", "Лепс");
+const student = new Student("Григорий", "Лепс", 2020);
+console.log(user.fullName());
+console.log(student.course());
+
+const studentsData = [
+  {
+    firstName: "Василий",
+    lastName: "Петров",
+    admissionYear: 2019,
+    courseName: "Java",
+  },
+  {
+    firstName: "Иван",
+    lastName: "Иванов",
+    admissionYear: 2018,
+    courseName: "JavaScript",
+  },
+  {
+    firstName: "Александр",
+    lastName: "Федоров",
+    admissionYear: 2017,
+    courseName: "Python",
+  },
+  {
+    firstName: "Николай",
+    lastName: "Петров",
+    admissionYear: 2019,
+    courseName: "Android",
+  },
+];
+
+const students = new Students(studentsData);
+console.log(students.getInfo());
