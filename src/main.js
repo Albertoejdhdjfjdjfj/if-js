@@ -84,12 +84,12 @@ function sliderImages(blockbody, data, button, lenght) {
 }
 
 function changeImages(blockbody, data, button, lenght) {
-  let copydata=data
-  return function (){
-    blockbody.innerHTML='';
+  let copydata = data;
+  return function () {
+    blockbody.innerHTML = "";
     copydata.shift();
-    sliderImages(blockbody, data, button, lenght)
-    if(copydata.lenght==lenght+1) copydata+=(data);
+    sliderImages(blockbody, data, button, lenght);
+    if (copydata.lenght == lenght + 1) copydata += data;
     return copydata;
-  }
+  };
 }
