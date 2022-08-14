@@ -72,8 +72,8 @@ button.innerHTML = "<svg><use xlink:href=\"#arrow_right\"></use></svg> ";
 sliderImages(slider, data, button, 4);
 button.addEventListener("click", changeImages(slider, data, button, 4));
 
-function sliderImages(blockbody, data, button, lenght) {
-  for (let start = 0; start < lenght; start++) {
+function sliderImages(blockbody, data, button, size) {
+  for (let start = 0; start < size; start++) {
     const object = document.createElement("div");
     object.classList.add("object");
     object.innerHTML = `<a href=""><img src="${data[start].imageUrl}"></a><h3>${data[start].name}</h3> <p>${data[start].city}, ${data[start].country}</p>`;
@@ -83,13 +83,13 @@ function sliderImages(blockbody, data, button, lenght) {
   blockbody.appendChild(button);
 }
 
-function changeImages(blockbody, data, button, lenght) {
-  let copydata = data;
+function changeImages(blockbody, data, button, size) {
+  let copydata = data.concat(data);
   return function () {
-    blockbody.innerHTML = "";
     copydata.shift();
-    sliderImages(blockbody, data, button, lenght);
-    if (copydata.lenght == lenght + 1) copydata += data;
-    return copydata;
+    if (copydata.length == data.length) copydata = copydata.concat(data);
+    blockbody.innerHTML = "";
+    sliderImages(blockbody, copydata, button, size);
+    console.log(copydata);
   };
 }
