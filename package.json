@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "prettier": "prettier --write src/**/*.js",
-    "lint": "eslint src/**/*js",
+    "lint": "eslint src/js/**/*js",
     "lint:write": "eslint --debug src/ --fix",
     "lint:fix": " prettier --write src/**/*.js && eslint src/**/*js",
     "prepare": "husky install"
