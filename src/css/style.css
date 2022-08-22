@@ -203,6 +203,7 @@ form > input {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  z-index: 2;
 }
 
 #filter_form_body{
