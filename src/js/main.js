@@ -5,9 +5,9 @@ const input = document.getElementById("num_people_input");
 input.addEventListener("click", clickInput());
 
 const popUpLabel = document.getElementById("popUplabel_children");
-const popUpSelect = document.getElementById("popUpselect_children");
+// let popUpSelect ;
+// popUpSelect.innerHTML="<select><option>0 years old</option><option>1 years old</option><option>2 years old</option><option>3 years old</option><option>4 years old</option><option>5 years old</option><option>6 years old</option><option>7 years old</option><option>8 years old</option></select>";
 popUpLabel.style.display = "none";
-popUpSelect.style.display = "none";
 
 const buttonPlus_adults = document.getElementById("plus_adults");
 const buttonMinus_adults = document.getElementById("minus_adults");
@@ -22,8 +22,7 @@ changeNumber(
   buttonMinus_children,
   inputField_children,
   10,
-  popUpLabel,
-  popUpSelect,
+  popUpLabel
 );
 
 const buttonPlus_rooms = document.getElementById("plus_rooms");
@@ -55,6 +54,7 @@ function changeNumber(
     }
 
     inputParametrs();
+    selectNum();
   });
 
   buttonMinus.addEventListener("click", () => {
@@ -68,16 +68,16 @@ function changeNumber(
     if (popUpLabel && popUpSelect) {
       popUpLabelAndSelect(inputField_children, popUpLabel, popUpSelect);
     }
+    inputParametrs() 
+    selectNum();
   });
 }
 
-function popUpLabelAndSelect(inputField_children, popUpLabel, popUpSelect) {
+function popUpLabelAndSelect(inputField_children, popUpLabel) {
   if (inputField_children.textContent != 0) {
     popUpLabel.style.display = "inline";
-    popUpSelect.style.display = "block";
   } else if (inputField_children.textContent == 0) {
     popUpLabel.style.display = "none";
-    popUpSelect.style.display = "none";
   }
 }
 
@@ -96,4 +96,13 @@ function clickInput() {
 
 function inputParametrs() {
   input.textContent = `${inputField_adults.textContent} Adults — ${inputField_children.textContent} Children — ${inputField_rooms.textContent} Room`;
+}
+
+function selectNum(){
+  //  const selects=document.getElementsByClassName("popUpselect_children")
+  //  if(selects.length!=Number(inputField_children.textContent)){
+  //   for(let i=selects.length;i<=Number(inputField_children.textContent);i++){
+      
+  //   }
+  //  }
 }
