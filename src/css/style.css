@@ -260,13 +260,6 @@ justify-content: space-between;
   font-weight: bold;
 }
 
-.forms_filter>div>button{
-  width: 2vw;
-  height: 2vw;
-  border-radius: inherit;
-  border-color: #3077C6;
-}
-
 #adults,#rooms,#children{
   display: flex;
   justify-content: space-between;
@@ -280,12 +273,16 @@ justify-content: space-between;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow:none;
 }
 
-.forms_filter>div>input{
-  width: 3.33vw;
-  height: 2vw;
-  
+.forms_filter>div>div{
+  /* width: 3.33vw;
+  height: 2vw; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:1.11vw
 }
 
 #filter_form_body>a{
