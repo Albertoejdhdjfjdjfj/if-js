@@ -196,7 +196,116 @@ form > input {
 .num_people_input {
   width: 22vw;
   border: none;
-  padding-left: 2vw;
+  font-size: 1.25vw;
+  border-radius: 0.56vw;
+  display: flex;
+ justify-content: center;
+}
+
+.wrapper_filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+#filter_form_body {
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  padding: 1.4vw 1vw 1.4vw 1vw;
+  margin-right: 13vw;
+  margin-top: 0.83vw;
+  border-radius: 0.56vw;
+}
+
+.wrapper_filter_categories {
+  height: 8vw;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0.7vw;
+}
+
+.piple_titles {
+  height: 7vw;
+  width: 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.piple_titles > p {
+  font-size: 1vw;
+}
+
+.forms_filter {
+  width: 7.5vw;
+  height: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forms_filter > div {
+  height: 2vw;
+  font-size: 2vw;
+  width: 7.5vw;
+  border-radius: inherit;
+}
+
+.button_pl_min > a {
+  color: #3077C6;
+}
+
+#adults,
+#rooms,
+#children {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_pl_min {
+  width: 2vw;
+  height: 2vw;
+  border: 1px solid  #3077C6;
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forms_filter > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.11vw
+}
+
+#filter_form_body > a {
+  width: 15vw;
+  font-size: 0.9vw;
+  color: #383838;
+  margin-top: 1.94vw;
+  margin-left: 0.5vw;
+}
+
+#filter_form_body > select {
+  margin-top: 0.83vw;
+  color: #3077C6;
+  border-color: #3077C6;
+  width: 6.875vw;
+  margin-left: 0.5vw;
+  font-size: 0.83vw;
+  height: 2vw;
+}
+
+#filter_form_body > select > option {
+  color: rgb(0, 0, 0);
 }
 
 form > button {
@@ -794,7 +903,7 @@ footer > a {
     margin-top: 14.44vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .page > h1 {
@@ -824,7 +933,6 @@ footer > a {
     height: 13.33vw;
     margin-left: 0;
     border-radius: 1.11vw;
-    border-top: ;
     font-size: 4.17vw;
     text-align: center;
   }
