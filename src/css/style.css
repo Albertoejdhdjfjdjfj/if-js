@@ -308,6 +308,18 @@ form > input {
   color: rgb(0, 0, 0);
 }
 
+form > #searchButton {
+  width: 13.33vw;
+  background: #3077c6;
+  border-radius: 0.56vw;
+  border: none;
+  font-size: 1.667vw;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+
 form > button {
   width: 13.33vw;
   background: #3077c6;
