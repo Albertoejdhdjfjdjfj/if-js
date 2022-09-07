@@ -21,7 +21,6 @@ function Slider(data) {
     slider.innerHTML = "";
     sliderImages(slider, sortdata, button, sortdata.length);
     changeImages(button, slider, sortdata, sortdata.length);
-    button.addEventListener("click", changeImages(slider, sortdata, button, 4));
   });
 }
 
