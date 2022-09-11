@@ -39,7 +39,7 @@ function sliderImages(blockbody, data, button, size) {
 }
 
 function changeImages(blockbody, data, button, size) {
-  if (data.length > 4) {
+  if (data.length > size) {
     let copydata = data;
     copydata = data.concat(data);
     return function () {
