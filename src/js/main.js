@@ -3,9 +3,9 @@ window.onload = () => {
 };
 
 function windowOnload() {
-  const sessionStor = sessionStorage.getItem("data");
-  if (sessionStor) {
-    const data = JSON.parse(sessionStor);
+  const sessionStore = sessionStorage.getItem("data");
+  if (sessionStore) {
+    const data = JSON.parse(sessionStore);
     Slider(data);
   } else {
     fetch("https://fe-student-api.herokuapp.com/api/hotels/popular")
@@ -18,7 +18,6 @@ function windowOnload() {
 }
 
 function Slider(data) {
-  console.log(data);
   const slider = document.getElementById("wrapper_for_category");
   const button = document.createElement("div");
   button.classList.add("button_arrow_right");
