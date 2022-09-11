@@ -30,7 +30,7 @@ function sliderImages(blockBody, data, button, size) {
   for (let start = 0; start < size; start++) {
     const object = document.createElement("div");
     object.classList.add("object");
-    object.innerHTML = `<a href=""><img src="${data[start].imageUrl}"></a><h3>${data[start].name}</h3> <p>${data[start].city}, ${data[start].country}</p>`;
+    object.innerHTML = `<a href="#"><img src="${data[start].imageUrl}" alt="${data[start].name}"></a><h3>${data[start].name}</h3> <p>${data[start].city}, ${data[start].country}</p>`;
     blockBody.appendChild(object);
   }
 
@@ -39,14 +39,13 @@ function sliderImages(blockBody, data, button, size) {
 
 function changeImages(blockBody, data, button, size) {
   if (data.length > size) {
-    let copydata = data;
-    copydata = data.concat(data);
+    let copyData = data;
+    copyData = data.concat(data);
     return function () {
-      copydata.shift();
-      if (copydata.length == data.length) copydata = copydata.concat(data);
-
+      copyData.shift();
+      if (copyData.length === data.length) copyData = copyData.concat(data);
       blockBody.innerHTML = "";
-      sliderImages(blockBody, copydata, button, size);
+      sliderImages(blockBody, copyData, button, size);
     };
   }
 }
