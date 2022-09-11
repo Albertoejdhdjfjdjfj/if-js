@@ -47,7 +47,6 @@ function changeImages(blockbody, data, button, size) {
 
       blockbody.innerHTML = "";
       sliderImages(blockbody, copydata, button, size);
-      console.log(copydata);
     };
   }
 }
