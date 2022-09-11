@@ -26,18 +26,18 @@ function Slider(data) {
   button.addEventListener("click", changeImages(slider, data, button, 4));
 }
 
-function sliderImages(blockbody, data, button, size) {
+function sliderImages(blockBody, data, button, size) {
   for (let start = 0; start < size; start++) {
     const object = document.createElement("div");
     object.classList.add("object");
     object.innerHTML = `<a href=""><img src="${data[start].imageUrl}"></a><h3>${data[start].name}</h3> <p>${data[start].city}, ${data[start].country}</p>`;
-    blockbody.appendChild(object);
+    blockBody.appendChild(object);
   }
 
-  blockbody.appendChild(button);
+  blockBody.appendChild(button);
 }
 
-function changeImages(blockbody, data, button, size) {
+function changeImages(blockBody, data, button, size) {
   if (data.length > size) {
     let copydata = data;
     copydata = data.concat(data);
@@ -45,8 +45,8 @@ function changeImages(blockbody, data, button, size) {
       copydata.shift();
       if (copydata.length == data.length) copydata = copydata.concat(data);
 
-      blockbody.innerHTML = "";
-      sliderImages(blockbody, copydata, button, size);
+      blockBody.innerHTML = "";
+      sliderImages(blockBody, copydata, button, size);
     };
   }
 }
