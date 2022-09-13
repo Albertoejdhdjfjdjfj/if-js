@@ -445,33 +445,25 @@ h2 {
   justify-content: space-between;
 }
 
-.object_before_breakpoint,
-.object {
-  width: 20.6vw;
-  height: 30.2vw;
-}
 
 .button_arrow_right > svg {
   position: absolute;
   z-index: 2;
 }
 
-.object > a > img,
-.object_before_breakpoint > a > img {
+.object > a > img {
   width: 20.6vw;
-  width: 20.6vw;
+  height: 20.4vw;
 }
 
-.object > h3,
-.object_before_breakpoint > h3 {
+.object > h3 {
   margin-top: 1.67vw;
   color: #3077c6;
   font-size: 1.67vw;
   font-weight: 400;
 }
 
-.object > p,
-.object_before_breakpoint > p {
+.object > p {
   margin-top: 1.67vw;
   font-size: 1.67vw;
   font-weight: 400;
@@ -1293,9 +1285,6 @@ footer > a {
     height: 43.33vw;
   }
 
-  .object_before_breakpoint {
-    display: none;
-  }
 
   .object > h3 {
     margin-top: 2.22vw;
