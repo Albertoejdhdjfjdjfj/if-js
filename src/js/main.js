@@ -32,15 +32,19 @@ function onloadFile() {
 
 function pushButton() {
   button.addEventListener("click", () => {
+    let formData= new FormData(form);
+    formData.append('file',input.files[0]);
     const response = fetch("https://fe-student-api.herokuapp.com/api/file", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
 
-      body: new FormData(form),
+      body: formData
     });
     
+    console.log(formData)
+
     if (response.ok) {
       alert("ok");
     } else {
@@ -48,3 +52,5 @@ function pushButton() {
     }
   });
 }
+
+
