@@ -15,14 +15,28 @@ changeNumber(buttonPlus_adults, buttonMinus_adults, inputField_adults, 30);
 const buttonPlus_children = document.getElementById("plus_children");
 const buttonMinus_children = document.getElementById("minus_children");
 const inputField_children = document.getElementById("input_field_children");
-changeNumber(buttonPlus_children, buttonMinus_children, inputField_children, 10, popUpLabel);
+changeNumber(
+  buttonPlus_children,
+  buttonMinus_children,
+  inputField_children,
+  10,
+  popUpLabel,
+  inputField_adults,
+);
 
 const buttonPlus_rooms = document.getElementById("plus_rooms");
 const buttonMinus_rooms = document.getElementById("minus_rooms");
 const inputField_rooms = document.getElementById("input_field_rooms");
 changeNumber(buttonPlus_rooms, buttonMinus_rooms, inputField_rooms, 30);
 
-function changeNumber(buttonPlus, buttonMinus, inputField, max, popUpLabel = undefined) {
+function changeNumber(
+  buttonPlus,
+  buttonMinus,
+  inputField,
+  max,
+  popUpLabel = undefined,
+  inputField_adults = undefined,
+) {
   let i = inputField.textContent;
 
   buttonPlus.addEventListener("click", () => {
@@ -39,7 +53,9 @@ function changeNumber(buttonPlus, buttonMinus, inputField, max, popUpLabel = und
     }
 
     inputParametrs();
-    selectNum();
+    if (inputField_adults != undefined && inputField_adults.textContent > 0) {
+      selectNum();
+    }
   });
 
   buttonMinus.addEventListener("click", () => {
@@ -54,7 +70,9 @@ function changeNumber(buttonPlus, buttonMinus, inputField, max, popUpLabel = und
       popUpLabelAndSelect(inputField_children, popUpLabel);
     }
     inputParametrs();
-    selectNum();
+    if (inputField_adults != undefined && inputField_adults.textContent > 0) {
+      selectNum();
+    }
   });
 }
 
@@ -91,7 +109,7 @@ function selectNum() {
       popUpSelect.classList = "popUpselect_children";
       popUpSelect.id = "popUpselect_children";
       popUpSelect.innerHTML =
-        "<option>0 years old</option><option>1 years old</option><option>2 years old</option><option>3 years old</option><option>4 years old</option><option>5 years old</option><option>6 years old</option><option>7 years old</option><option>8 years old</option>";
+        "<option value='0'>0 years old</option><option value='1'>1 years old</option><option value='2'>2 years old</option><option value='3'>3 years old</option><option value='4'>4 years old</option><option value='5'>5 years old</option><option value='6'>6 years old</option><option value='7'>7 years old</option><option value='8'>8 years old</option>";
       windo.appendChild(popUpSelect);
     }
   } else if (selects.length > inputField_children.textContent) {
@@ -100,4 +118,3 @@ function selectNum() {
     }
   }
 }
-
