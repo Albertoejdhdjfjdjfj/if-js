@@ -1,3 +1,4 @@
+
 window.onload = () => {
      windowOnload();
    };
@@ -27,16 +28,21 @@ function Slider(data) {
   button.innerHTML = "<svg><use xlink:href=\"#arrow_right\"></use></svg> ";
   sliderImages(slider, data, button, 4);
   button.addEventListener("click", changeImages(slider, data, button, 4));
-
+ 
   const cityInput = document.getElementById("city_input");
   const searchButton = document.getElementById("searchButton");
+  const inputField_rooms = document.getElementById("input_field_rooms");
+  const inputField_adults = document.getElementById("input_field_adults");
+  const inputField_children  = document.getElementById("input_field_children");
 
-  searchButton.addEventListener("click", () => {
-    const sortdata = findmatches(cityInput.value, data);
-    slider.innerHTML = "";
-    sliderImages(slider, sortdata, button, sortdata.length);
-    changeImages(button, slider, sortdata, sortdata.length);
-  });
+  searchButton.addEventListener("click", async() => {
+      const response =  await fetch(`https://fe-student-api.herokuapp.com/api/hotels?search=us&adults=${inputField_adults.textContent}&children=${inputField_children.textContent},10&rooms=${inputField_rooms.textContent}`);
+      data=await response.json();
+      console.log(data);
+      data=findmatches(cityInput.value,data);
+      slider.innerHTML="";
+      sliderImages(slider, data, button, 4);
+    });
 }
 
 function sliderImages(blockbody, data, button, size) {
@@ -60,7 +66,6 @@ function changeImages(blockbody, data, button, size) {
 
       blockbody.innerHTML = "";
       sliderImages(blockbody, copydata, button, size);
-      console.log(copydata);
     };
   }
 }
