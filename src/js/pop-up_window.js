@@ -1,4 +1,4 @@
-import{inputField_rooms,buttonMinus_rooms,buttonPlus_rooms,inputField_children,buttonMinus_children,buttonPlus_children,inputField_adults,buttonMinus_adults,buttonPlus_adults,popUpLabel,input,windo} from './variables.js';
+import{inputField_rooms,buttonMinus_rooms,buttonPlus_rooms,inputField_children,buttonMinus_children,buttonPlus_children,inputField_adults,buttonMinus_adults,buttonPlus_adults,popUpLabel,input,windo} from "./variables.js";
 
 input.addEventListener("click", clickInput());
 windo.style.display = "none";

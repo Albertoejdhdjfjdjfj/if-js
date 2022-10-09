@@ -1,7 +1,7 @@
 const cityInput = document.getElementById("city_input");
 const searchButton = document.getElementById("searchButton");
-let inputDateFrom=document.getElementById("DateFrom");
-let inputDateTo=document.getElementById("DateTo");
+const inputDateFrom=document.getElementById("DateFrom");
+const inputDateTo=document.getElementById("DateTo");
 
 const windo = document.getElementById("filter_form_body");
 const input = document.getElementById("num_people_input");

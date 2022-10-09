@@ -1,4 +1,4 @@
-import {cityInput,searchButton,inputField_rooms,inputField_adults,inputDateFrom,inputDateTo} from './variables.js'
+import {cityInput,searchButton,inputField_rooms,inputField_adults,inputDateFrom,inputDateTo} from "./variables.js"
 
 window.onload = () => {
   windowOnload();
@@ -81,7 +81,7 @@ function arrAgeOfChildren() {
 }
 
 function defineDate(value){
-  if(value===''){
+  if(value===""){
     return new Date().getTime()
   }
  
