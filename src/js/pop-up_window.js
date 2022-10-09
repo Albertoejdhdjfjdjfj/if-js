@@ -1,42 +1,15 @@
-const windo = document.getElementById("filter_form_body");
-windo.style.display = "none";
-const input = document.getElementById("num_people_input");
+import{inputField_rooms,buttonMinus_rooms,buttonPlus_rooms,inputField_children,buttonMinus_children,buttonPlus_children,inputField_adults,buttonMinus_adults,buttonPlus_adults,popUpLabel,input,windo} from './variables.js';
 
 input.addEventListener("click", clickInput());
-
-const popUpLabel = document.getElementById("popUplabel_children");
+windo.style.display = "none";
 popUpLabel.style.display = "none";
 
-const buttonPlus_adults = document.getElementById("plus_adults");
-const buttonMinus_adults = document.getElementById("minus_adults");
-const inputField_adults = document.getElementById("input_field_adults");
+
 changeNumber(buttonPlus_adults, buttonMinus_adults, inputField_adults, 30);
-
-const buttonPlus_children = document.getElementById("plus_children");
-const buttonMinus_children = document.getElementById("minus_children");
-const inputField_children = document.getElementById("input_field_children");
-changeNumber(
-  buttonPlus_children,
-  buttonMinus_children,
-  inputField_children,
-  10,
-  popUpLabel,
-  inputField_adults,
-);
-
-const buttonPlus_rooms = document.getElementById("plus_rooms");
-const buttonMinus_rooms = document.getElementById("minus_rooms");
-const inputField_rooms = document.getElementById("input_field_rooms");
+changeNumber(buttonPlus_children,buttonMinus_children,inputField_children,10,popUpLabel,inputField_adults);
 changeNumber(buttonPlus_rooms, buttonMinus_rooms, inputField_rooms, 30);
 
-function changeNumber(
-  buttonPlus,
-  buttonMinus,
-  inputField,
-  max,
-  popUpLabel = undefined,
-  inputField_adults = undefined,
-) {
+function changeNumber(buttonPlus,buttonMinus,inputField,max,popUpLabel = undefined,inputField_adults = undefined) {
   let i = inputField.textContent;
 
   buttonPlus.addEventListener("click", () => {
@@ -118,3 +91,4 @@ function selectNum() {
     }
   }
 }
+
