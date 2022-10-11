@@ -1,21 +1,9 @@
+import {cityInput,searchButton,inputField_rooms,inputField_adults,inputDateFrom,inputDateTo} from "./variables.js"
+
 window.onload = () => {
   windowOnload();
 };
 
-function windowOnload() {
-  const sessionStore = sessionStorage.getItem("data");
-  if (sessionStore) {
-    const data = JSON.parse(sessionStore);
-    Slider(data);
-  } else {
-    fetch("https://fe-student-api.herokuapp.com/api/hotels/popular")
-      .then((response) => response.json())
-      .then((data) => {
-        sessionStorage.setItem("data", JSON.stringify(data));
-        Slider(data);
-      });
-  }
-}
 
 function Slider(data) {
   console.log(data);
@@ -26,15 +14,10 @@ function Slider(data) {
   sliderImages(slider, data, button, 4);
   button.addEventListener("click", changeImages(slider, data, button, 4));
 
-  const cityInput = document.getElementById("city_input");
-  const searchButton = document.getElementById("searchButton");
-  const inputField_rooms = document.getElementById("input_field_rooms");
-  const inputField_adults = document.getElementById("input_field_adults");
-
   searchButton.addEventListener("click", async () => {
     const str = arrAgeOfChildren();
     const response = await fetch(
-      `https://fe-student-api.herokuapp.com/api/hotels?search=us&adults=${inputField_adults.textContent}&children=${str}&rooms=${inputField_rooms.textContent}`,
+      `https://fe-student-api.herokuapp.com/api/hotels?search=us&dateFrom=${defineDate(inputDateFrom.value)}&dateTo=${defineDate(inputDateTo.value)}&adults=${inputField_adults.textContent}&children=${str}&rooms=${inputField_rooms.textContent}`,
     );
     const result = findmatches(cityInput.value, await response.json());
     if (result.length == 0) {
@@ -95,4 +78,27 @@ function arrAgeOfChildren() {
   }
   console.log(str);
   return str;
+}
+
+function defineDate(value){
+  if(value===""){
+    return new Date().getTime()
+  }
+ 
+  return new Date(value).getTime()
+}
+
+function windowOnload() {
+  const sessionStore = sessionStorage.getItem("data");
+  if (sessionStore) {
+    const data = JSON.parse(sessionStore);
+    Slider(data);
+  } else {
+    fetch("https://fe-student-api.herokuapp.com/api/hotels/popular")
+      .then((response) => response.json())
+      .then((data) => {
+        sessionStorage.setItem("data", JSON.stringify(data));
+        Slider(data);
+      });
+  }
 }
