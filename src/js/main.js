@@ -6,7 +6,6 @@ window.onload = () => {
 
 
 function Slider(data) {
-  console.log(data);
   const slider = document.getElementById("wrapper_for_category");
   const button = document.createElement("div");
   button.classList.add("button_arrow_right");
