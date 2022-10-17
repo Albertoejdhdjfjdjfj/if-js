@@ -15,9 +15,8 @@ function Slider(data) {
   button.addEventListener("click", changeImages(slider, data, button, 4));
 
   searchButton.addEventListener("click", async () => {
-    const str = arrAgeOfChildren();
     const response = await fetch(
-      `https://fe-student-api.herokuapp.com/api/hotels?search=us&dateFrom=${defineDate(inputDateFrom.value)}&dateTo=${defineDate(inputDateTo.value)}&adults=${inputField_adults.textContent}&children=${str}&rooms=${inputField_rooms.textContent}`,
+      `https://fe-student-api.herokuapp.com/api/hotels?search=us&dateFrom=${defineDate(inputDateFrom.value)}&dateTo=${defineDate(inputDateTo.value)}&adults=${inputField_adults.textContent}&children=${arrAgeOfChildren()}&rooms=${inputField_rooms.textContent}`,
     );
     const result = findmatches(cityInput.value, await response.json());
     if (result.length == 0) {
@@ -42,8 +41,7 @@ function sliderImages(blockbody, data, button, size) {
 
 function changeImages(blockbody, data, button, size) {
   if (data.length > size) {
-    let copydata = data;
-    copydata = data.concat(data);
+    let copydata = data.concat(data);
     return function () {
       copydata.shift();
       if (copydata.length == data.length) copydata = copydata.concat(data);
