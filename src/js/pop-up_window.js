@@ -6,13 +6,62 @@ popUpLabel.style.display = "none";
 
 
 changeNumber(buttonPlus_adults, buttonMinus_adults, inputField_adults, 30);
-changeNumber(buttonPlus_children,buttonMinus_children,inputField_children,10,popUpLabel,inputField_adults);
+changeNumberForChild(buttonPlus_children,buttonMinus_children,inputField_children,10,inputField_adults);
 changeNumber(buttonPlus_rooms, buttonMinus_rooms, inputField_rooms, 30);
 
-function changeNumber(buttonPlus,buttonMinus,inputField,max,popUpLabel = undefined,inputField_adults = undefined) {
+function changeNumber(buttonPlus,buttonMinus,inputField,max) {
   let i = inputField.textContent;
 
   buttonPlus.addEventListener("click", () => {
+    if (i < max) {
+      i++;
+      inputField.textContent = i;
+    } else {
+      i = 0;
+      inputField.textContent = i;
+    }
+
+
+    inputParametrs();
+    if ( inputField_adults.textContent == 0) {
+      inputField_children.textContent=0;
+      const selects = document.getElementsByClassName("popUpselect_children");
+      for (let i = selects.length; i > 0; i--) {
+        windo.removeChild(document.getElementById("popUpselect_children"));
+      }
+      popUpLabel.style.display = "none";
+    }
+  });
+
+  
+
+  buttonMinus.addEventListener("click", () => {
+    if (i > 0) {
+      i--;
+      inputField.textContent = i;
+    } else {
+      i = max;
+      inputField.textContent = i;
+    }
+  
+    inputParametrs();
+    if ( inputField_adults.textContent == 0) {
+      inputField_children.textContent=0;
+      const selects = document.getElementsByClassName("popUpselect_children");
+      for (let i = selects.length; i > 0; i--) {
+        windo.removeChild(document.getElementById("popUpselect_children"));
+      }
+      popUpLabel.style.display = "none";
+    }
+  });
+}
+
+function changeNumberForChild(buttonPlus,buttonMinus,inputField,max,inputField_adults) {
+  
+  let i = inputField.textContent;
+
+  buttonPlus.addEventListener("click", () => {
+  if(Number( inputField_adults.textContent)>0){
     if (i < max) {
       i++;
       inputField.textContent = i;
@@ -29,9 +78,13 @@ function changeNumber(buttonPlus,buttonMinus,inputField,max,popUpLabel = undefin
     if (inputField_adults != undefined && inputField_adults.textContent > 0) {
       selectNum();
     }
+  }
   });
 
+  
+
   buttonMinus.addEventListener("click", () => {
+    if(Number( inputField_adults.textContent)>0){
     if (i > 0) {
       i--;
       inputField.textContent = i;
@@ -46,8 +99,10 @@ function changeNumber(buttonPlus,buttonMinus,inputField,max,popUpLabel = undefin
     if (inputField_adults != undefined && inputField_adults.textContent > 0) {
       selectNum();
     }
+  }
   });
 }
+
 
 function popUpLabelAndSelect(inputField_children, popUpLabel) {
   if (inputField_children.textContent != 0) {

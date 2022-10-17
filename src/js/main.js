@@ -21,10 +21,10 @@ function Slider(data) {
     );
     const result = findmatches(cityInput.value, await response.json());
     if (result.length == 0) {
-      sliderImages(slider, data, button, data < 4 ? data.length : 4);
+      sliderImages(slider, data, button, data.length < 4 ? data.length : 4);
     } else {
       slider.innerHTML = "";
-      sliderImages(slider, result, button, result < 4 ? result.length : 4);
+      sliderImages(slider, result, button, result.length < 4 ? result.length : 4);
     }
   });
 }
