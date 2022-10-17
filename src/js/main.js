@@ -74,7 +74,6 @@ function arrAgeOfChildren() {
       }
     }
   }
-  console.log(str);
   return str;
 }
 
